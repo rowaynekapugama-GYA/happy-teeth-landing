@@ -247,7 +247,7 @@ footer a{color:var(--salmon);text-decoration:none}
       </form>
       <div class="form-success" id="formSuccess">
         <h3>Thank you — request received</h3>
-        <p>Our team will give you a call shortly to arrange your free consultation. Can't wait? Call us now on <a href="tel:0731139688" style="color:var(--salmon-deep);font-weight:800">(07) 3113 9688</a>.</p>
+        <p>Our team will give you a call shortly to arrange your free consultation and answer any questions.</p>
       </div>
     </div>
   </div>
@@ -496,7 +496,6 @@ footer a{color:var(--salmon);text-decoration:none}
     <div class="visit-grid">
       <div class="visit-details">
         <div class="visit-item"><h3>Address</h3><p>Springwood Mall, Corner of Rochedale Road &amp; Fitzgerald Avenue, Springwood QLD 4127 — between Target and Woolworths.</p></div>
-        <div class="visit-item"><h3>Phone</h3><p><a href="tel:0731139688">(07) 3113 9688</a></p></div>
         <div class="visit-item"><h3>Hours</h3><p>Monday–Friday: 8:30am – 5:00pm<br>Earlier &amp; later appointments (7:30am–7pm) available on request.</p></div>
         <div class="visit-item"><h3>Parking</h3><p>Ample free parking at Springwood Mall, with easy access from the M1 (exit 20).</p></div>
       </div>
@@ -513,8 +512,7 @@ footer a{color:var(--salmon);text-decoration:none}
       <div>
         <h3>Happy Teeth Springwood</h3>
         <p>Springwood Mall, Corner of Rochedale Road &amp; Fitzgerald Avenue<br>Springwood QLD 4127</p>
-        <p style="margin-top:10px"><a href="tel:0731139688">(07) 3113 9688</a></p>
-      </div>
+        </div>
       <div>
         <h3>Hours</h3>
         <p>Monday–Friday: 8:30am – 5:00pm<br>Earlier and later appointments (7:30am–7pm) available on request.</p>
@@ -530,8 +528,7 @@ footer a{color:var(--salmon);text-decoration:none}
 </footer>
 
 <div class="sticky-cta">
-  <a class="btn btn-ghost" href="tel:0731139688">Call now</a>
-  <a class="btn btn-primary" href="#consult">Free Consult</a>
+  <a class="btn btn-primary" href="#consult">Book My Free Consult</a>
 </div>
 
 <script>
@@ -559,7 +556,7 @@ form.addEventListener('submit',async e=>{
     if(window.gtag)gtag('event','generate_lead');
   }catch(err){
     btn.disabled=false;btn.textContent='Claim my free consultation';
-    alert('Something went wrong sending your request. Please call us on (07) 3113 9688 and we\'ll book you in.');
+    alert('Something went wrong sending your request. Please check your details and try again.');
   }
 });
 </script>
