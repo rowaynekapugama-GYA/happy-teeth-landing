@@ -179,6 +179,14 @@ footer a{color:var(--salmon);text-decoration:none}
 .pay-photo{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);position:relative}
 .pay-photo img{width:100%;display:block;aspect-ratio:4/3.4;object-fit:cover}
 .pay-photo .ph-cap{position:absolute;left:12px;bottom:12px;background:rgba(18,51,43,.82);backdrop-filter:blur(6px);color:#fff;font-size:.78rem;font-weight:600;padding:8px 13px;border-radius:12px}
+/* footer page toggle */
+.page-toggle{display:flex;flex-direction:column;align-items:center;gap:12px;padding:26px 0 30px;margin-bottom:30px;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}
+.page-toggle .pt-label{font-size:.74rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--salmon)}
+.pt-switch{display:inline-flex;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:5px;gap:4px;max-width:100%}
+.pt-switch a{flex:1;text-align:center;padding:11px 20px;border-radius:999px;font-size:.9rem;font-weight:700;color:#CFE0D8;text-decoration:none;white-space:nowrap;transition:background .18s,color .18s}
+.pt-switch a:hover{color:#fff;background:rgba(255,255,255,.1)}
+.pt-switch a.is-current{background:linear-gradient(135deg,var(--salmon),var(--salmon-deep));color:#fff;box-shadow:0 6px 16px rgba(206,130,112,.35)}
+@media(max-width:480px){.pt-switch{width:100%}.pt-switch a{padding:11px 10px;font-size:.83rem}}
 /* sticky mobile bar */
 .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
 .sticky-cta .btn{flex:1;padding:13px 10px;font-size:.92rem}
@@ -516,6 +524,13 @@ footer a{color:var(--salmon);text-decoration:none}
       <div>
         <h3>Hours</h3>
         <p>Monday–Friday: 8:30am – 5:00pm<br>Earlier and later appointments (7:30am–7pm) available on request.</p>
+      </div>
+    </div>
+    <div class="page-toggle">
+      <span class="pt-label">Explore our treatments</span>
+      <div class="pt-switch">
+        <a href="dental-implants.html" class="is-current">Dental Implants · from $39/wk</a>
+        <a href="clear-aligners.html">Clear Aligners · from $59/wk</a>
       </div>
     </div>
     <div class="legal">
