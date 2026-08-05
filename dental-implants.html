@@ -12,7 +12,7 @@
 <style>
 :root{
   --green:#286050; --green-deep:#1B453A; --green-ink:#12332B;
-  --salmon:#DDA090; --salmon-deep:#CE8270; --salmon-soft:#F6E4DE;
+  --salmon:#A47D50; --salmon-deep:#8A6740; --salmon-soft:#F3EADD;
   --cream:#FAF6F1; --line:#E5DED5; --white:#FFFFFF;
   --muted:#5F7268; --radius:22px;
   --shadow:0 16px 44px rgba(27,69,58,.12);
@@ -37,8 +37,8 @@ section{padding:64px 0}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:1rem;padding:16px 28px;border-radius:999px;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;border:0;cursor:pointer;letter-spacing:.01em}
 .btn:hover{transform:translateY(-2px)}
 .btn:active{transform:scale(.97)}
-.btn-primary{background:linear-gradient(135deg,var(--salmon) 0%,var(--salmon-deep) 100%);color:#fff;box-shadow:0 10px 26px rgba(206,130,112,.45)}
-.btn-primary:hover{box-shadow:0 14px 32px rgba(206,130,112,.55)}
+.btn-primary{background:linear-gradient(135deg,var(--salmon) 0%,var(--salmon-deep) 100%);color:#fff;box-shadow:0 10px 26px rgba(164,125,80,.42)}
+.btn-primary:hover{box-shadow:0 14px 32px rgba(164,125,80,.55)}
 .btn-green{background:linear-gradient(135deg,#347A65,var(--green));color:#fff;box-shadow:0 10px 26px rgba(40,96,80,.35)}
 .btn-ghost{background:#fff;color:var(--green);border:2px solid var(--line)}
 /* header */
@@ -62,7 +62,7 @@ section{padding:64px 0}
 .hero .sub{font-size:1.08rem;color:#DCE9E3;margin-bottom:22px;max-width:50ch}
 .trust{list-style:none;display:flex;flex-wrap:wrap;gap:10px 20px;margin:20px 0 8px}
 .trust li{display:flex;align-items:center;gap:9px;font-size:.92rem;font-weight:600;color:#EAF2EE}
-.tick{width:21px;height:21px;flex:0 0 21px;border-radius:50%;background:var(--salmon);color:var(--green-ink);display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800}
+.tick{width:21px;height:21px;flex:0 0 21px;border-radius:50%;background:var(--salmon);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800}
 .finance-strip{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px}
 .chip-note{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(8px);border-radius:14px;padding:10px 14px;font-size:.84rem;font-weight:600;color:#fff;display:flex;align-items:center;gap:8px}
 .chip-note span{color:var(--salmon)}
@@ -106,7 +106,7 @@ section{padding:64px 0}
 .card ul{list-style:none;margin-top:14px;display:grid;gap:9px}
 .card ul li{display:flex;gap:9px;font-size:.92rem;color:var(--green-deep)}
 .card .tick{background:var(--green);color:#fff}
-.tag{display:inline-block;background:var(--salmon);color:var(--green-ink);font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-bottom:12px}
+.tag{display:inline-block;background:var(--salmon);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-bottom:12px}
 .alt{background:var(--cream)}
 /* steps */
 .steps{display:grid;gap:20px;margin-top:36px}
@@ -114,7 +114,7 @@ section{padding:64px 0}
 .step{background:#fff;border:2px solid var(--line);border-radius:var(--radius);padding:26px 20px;position:relative;transition:transform .2s,box-shadow .2s}
 .step:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
 .step svg{width:100%;height:auto;margin-bottom:14px}
-.step-num{position:absolute;top:-15px;left:20px;background:linear-gradient(135deg,var(--salmon),var(--salmon-deep));color:#fff;font-family:'Fraunces',serif;font-weight:640;font-size:.95rem;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px rgba(206,130,112,.4)}
+.step-num{position:absolute;top:-15px;left:20px;background:linear-gradient(135deg,var(--salmon),var(--salmon-deep));color:#fff;font-family:'Fraunces',serif;font-weight:640;font-size:.95rem;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px rgba(164,125,80,.4)}
 .step h3{font-size:1.05rem;margin-bottom:8px}
 .step p{font-size:.88rem;color:var(--muted)}
 /* payment */
@@ -146,7 +146,7 @@ details[open] summary::after{transform:rotate(45deg)}
 details .a{padding:0 20px 18px;color:var(--muted);font-size:.94rem}
 /* bottom cta */
 .bottom-cta{background:linear-gradient(135deg,var(--green-deep),var(--green));color:#fff;text-align:center;border-radius:28px;padding:56px 24px;position:relative;overflow:hidden}
-.bottom-cta::after{content:"";position:absolute;right:-70px;top:-70px;width:240px;height:240px;border-radius:50%;background:rgba(221,160,144,.22)}
+.bottom-cta::after{content:"";position:absolute;right:-70px;top:-70px;width:240px;height:240px;border-radius:50%;background:rgba(164,125,80,.24)}
 .bottom-cta h2{color:#fff;margin-bottom:12px}
 .bottom-cta p{color:#DCE9E3;margin-bottom:26px}
 /* footer */
@@ -185,7 +185,7 @@ footer a{color:var(--salmon);text-decoration:none}
 .pt-switch{display:inline-flex;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:5px;gap:4px;max-width:100%}
 .pt-switch a{flex:1;text-align:center;padding:11px 20px;border-radius:999px;font-size:.9rem;font-weight:700;color:#CFE0D8;text-decoration:none;white-space:nowrap;transition:background .18s,color .18s}
 .pt-switch a:hover{color:#fff;background:rgba(255,255,255,.1)}
-.pt-switch a.is-current{background:linear-gradient(135deg,var(--salmon),var(--salmon-deep));color:#fff;box-shadow:0 6px 16px rgba(206,130,112,.35)}
+.pt-switch a.is-current{background:linear-gradient(135deg,var(--salmon),var(--salmon-deep));color:#fff;box-shadow:0 6px 16px rgba(164,125,80,.35)}
 @media(max-width:480px){.pt-switch{width:100%}.pt-switch a{padding:11px 10px;font-size:.83rem}}
 /* sticky mobile bar */
 .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
@@ -314,8 +314,8 @@ footer a{color:var(--salmon);text-decoration:none}
         <svg viewBox="0 0 160 110" role="img" aria-label="Diagram: 3D scan and assessment of the jaw">
           <rect x="10" y="10" width="140" height="90" rx="10" fill="#FAF6F1" stroke="#E5DED5"/>
           <path d="M40 78 Q60 40 80 40 Q100 40 120 78" fill="none" stroke="#286050" stroke-width="3" stroke-dasharray="5 4"/>
-          <circle cx="80" cy="58" r="22" fill="none" stroke="#DDA090" stroke-width="3.5"/>
-          <line x1="96" y1="74" x2="112" y2="90" stroke="#DDA090" stroke-width="4.5" stroke-linecap="round"/>
+          <circle cx="80" cy="58" r="22" fill="none" stroke="#A47D50" stroke-width="3.5"/>
+          <line x1="96" y1="74" x2="112" y2="90" stroke="#A47D50" stroke-width="4.5" stroke-linecap="round"/>
         </svg>
         <h3>Consult &amp; records</h3>
         <p>Start with a free consultation to talk through your options and see an implant on a model. From there, a comprehensive exam with x-rays, photos and a 3D CBCT scan maps your jaw precisely.</p>
@@ -335,7 +335,7 @@ footer a{color:var(--salmon);text-decoration:none}
           <rect x="10" y="55" width="140" height="45" rx="8" fill="#F6E4DE"/>
           <path d="M10 55 Q80 42 150 55" fill="#EBC4B8"/>
           <rect x="72" y="40" width="16" height="52" rx="4" fill="#286050"/>
-          <path d="M60 62 q-8 4 -14 2 M100 62 q8 4 14 2 M62 78 q-9 3 -15 0 M98 78 q9 3 15 0" stroke="#DDA090" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <path d="M60 62 q-8 4 -14 2 M100 62 q8 4 14 2 M62 78 q-9 3 -15 0 M98 78 q9 3 15 0" stroke="#A47D50" stroke-width="3.5" fill="none" stroke-linecap="round"/>
         </svg>
         <h3>Healing &amp; fusing</h3>
         <p>Over the following weeks the implant bonds with your bone — creating a foundation as stable as a natural root.</p>
@@ -489,7 +489,7 @@ footer a{color:var(--salmon);text-decoration:none}
     <div class="bottom-cta">
       <span class="eyebrow" style="color:var(--salmon);justify-content:center;display:flex">Ready when you are</span>
       <h2>Take the first step toward your new smile</h2>
-      <p>Free 30-minute consultation · Clear plan with funding options · Experienced, caring team</p>
+      <p>Free consultation · Clear plan with funding options · Experienced, caring team</p>
       <a class="btn btn-primary" href="#consult">Book my free consultation</a>
     </div>
   </div>
@@ -504,7 +504,7 @@ footer a{color:var(--salmon);text-decoration:none}
     <div class="visit-grid">
       <div class="visit-details">
         <div class="visit-item"><h3>Address</h3><p>Springwood Mall, Corner of Rochedale Road &amp; Fitzgerald Avenue, Springwood QLD 4127 — between Target and Woolworths.</p></div>
-        <div class="visit-item"><h3>Hours</h3><p>Monday–Friday: 8:30am – 5:00pm<br>Earlier &amp; later appointments (7:30am–7pm) available on request.</p></div>
+        <div class="visit-item"><h3>Hours</h3><p>Monday–Friday: 8:30am – 5:00pm</p></div>
         <div class="visit-item"><h3>Parking</h3><p>Ample free parking at Springwood Mall, with easy access from the M1 (exit 20).</p></div>
       </div>
       <div class="map-frame">
@@ -523,7 +523,7 @@ footer a{color:var(--salmon);text-decoration:none}
         </div>
       <div>
         <h3>Hours</h3>
-        <p>Monday–Friday: 8:30am – 5:00pm<br>Earlier and later appointments (7:30am–7pm) available on request.</p>
+        <p>Monday–Friday: 8:30am – 5:00pm</p>
       </div>
     </div>
     <div class="page-toggle">
