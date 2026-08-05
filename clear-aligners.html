@@ -157,6 +157,46 @@ footer h3{color:#fff;font-size:1rem;margin-bottom:10px}
 .legal{border-top:1px solid rgba(255,255,255,.14);padding-top:24px}
 .legal p{color:#7E988D;font-size:.76rem;margin-bottom:10px;line-height:1.7}
 footer a{color:var(--salmon);text-decoration:none}
+/* before-after results */
+.ba-note{font-size:.8rem;color:var(--muted);margin-top:18px}
+.ba-featured{position:relative;border-radius:var(--radius);overflow:hidden;margin-top:34px;box-shadow:var(--shadow)}
+.ba-featured img{width:100%;display:block}
+.ba-grid{display:grid;gap:20px;margin-top:20px}
+@media(min-width:760px){.ba-grid{grid-template-columns:1fr 1fr}}
+.ba-card{background:#fff;border:2px solid var(--line);border-radius:var(--radius);padding:14px 14px 16px;transition:transform .2s,box-shadow .2s}
+.ba-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ba-item{position:relative;border-radius:14px;overflow:hidden;background:var(--cream)}
+.ba-item img{width:100%;height:100%;object-fit:cover}
+.ba-face .ba-item img{aspect-ratio:4/5}
+.ba-mouth .ba-item img{aspect-ratio:16/9}
+.ba-pill{position:absolute;top:10px;left:10px;font-size:.66rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;padding:5px 11px;border-radius:999px;color:#fff;background:rgba(18,51,43,.85);backdrop-filter:blur(4px)}
+.ba-pill.after{background:linear-gradient(135deg,var(--salmon),var(--salmon-deep));color:#fff}
+.ba-caption{margin-top:12px;padding:0 4px}
+.ba-caption h3{font-size:1rem}
+.ba-caption p{font-size:.84rem;color:var(--muted);margin-top:2px}
+/* visit us — dark shopfront banner with map */
+.visit{position:relative;overflow:hidden;background:var(--green-ink);color:#fff}
+.visit::before{content:"";position:absolute;inset:0;background:url('images/shopfront.jpg') center/cover;opacity:.8}
+.visit::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(18,51,43,.96) 0%,rgba(18,51,43,.88) 45%,rgba(18,51,43,.62) 100%)}
+.visit .wrap{position:relative;z-index:2}
+.visit .eyebrow{color:var(--salmon)}
+.visit h2{color:#fff}
+.visit-grid{display:grid;gap:28px;margin-top:30px;align-items:stretch}
+@media(min-width:900px){.visit-grid{grid-template-columns:.9fr 1.1fr}}
+.visit-details{display:grid;gap:16px;align-content:start}
+.visit-item{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px);border-radius:16px;padding:16px 18px}
+.visit-item h3{color:#fff;font-size:.98rem;margin-bottom:4px}
+.visit-item p{color:#CFE0D8;font-size:.9rem}
+.visit-item a{color:var(--salmon);text-decoration:none;font-weight:700}
+.map-frame{border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.2);box-shadow:0 24px 60px rgba(0,0,0,.45);min-height:340px}
+.map-frame iframe{width:100%;height:100%;min-height:340px;border:0;display:block;filter:saturate(.9)}
+/* payment intro photo */
+.pay-intro{display:grid;gap:26px;align-items:center}
+@media(min-width:900px){.pay-intro{grid-template-columns:1.15fr .85fr}}
+.pay-photo{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);position:relative}
+.pay-photo img{width:100%;display:block;aspect-ratio:4/3.4;object-fit:cover}
+.pay-photo .ph-cap{position:absolute;left:12px;bottom:12px;background:rgba(18,51,43,.82);backdrop-filter:blur(6px);color:#fff;font-size:.78rem;font-weight:600;padding:8px 13px;border-radius:12px}
 /* sticky mobile bar */
 .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
 .sticky-cta .btn{flex:1;padding:13px 10px;font-size:.92rem}
@@ -272,37 +312,79 @@ footer a{color:var(--salmon);text-decoration:none}
   </div>
 </section>
 
-<!-- PROCEDURE DIAGRAMS -->
+<!-- BEFORE & AFTER -->
 <section class="alt">
+  <div class="wrap">
+    <span class="eyebrow">Real results</span>
+    <h2>Real Happy Teeth smiles</h2>
+    <p class="lead" style="margin-top:14px">Every one of these smiles was transformed with clear aligners right here at our Springwood practice.</p>
+    <div class="ba-featured">
+      <img src="images/case-displaced-combined.jpg" alt="Before and after clear aligner treatment for a displaced side tooth" loading="lazy">
+      <span class="ba-pill">Before</span>
+      <span class="ba-pill after" style="left:calc(50% + 10px)">After</span>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card ba-face">
+        <div class="ba-pair">
+          <div class="ba-item"><img src="images/case-flared-before.jpg" alt="Smile before clear aligner treatment for flared upper front teeth" loading="lazy"><span class="ba-pill">Before</span></div>
+          <div class="ba-item"><img src="images/case-flared-after.jpg" alt="Smile after clear aligner treatment for flared upper front teeth" loading="lazy"><span class="ba-pill after">After</span></div>
+        </div>
+        <div class="ba-caption"><h3>Flared front teeth</h3><p>Upper front teeth gently brought back into line for a balanced, confident smile.</p></div>
+      </div>
+      <div class="ba-card ba-mouth">
+        <div class="ba-pair">
+          <div class="ba-item"><img src="images/case-angled-before.jpg" alt="Teeth before clear aligner treatment for angled front teeth and a narrow arch" loading="lazy"><span class="ba-pill">Before</span></div>
+          <div class="ba-item"><img src="images/case-angled-after.jpg" alt="Teeth after clear aligner treatment for angled front teeth and a narrow arch" loading="lazy"><span class="ba-pill after">After</span></div>
+        </div>
+        <div class="ba-caption"><h3>Angled front teeth &amp; narrow arch</h3><p>The arch was widened and the front teeth aligned — no braces needed.</p></div>
+      </div>
+      <div class="ba-card ba-mouth">
+        <div class="ba-pair">
+          <div class="ba-item"><img src="images/case-crowding-before.jpg" alt="Teeth before clear aligner treatment for crowding and a deep bite" loading="lazy"><span class="ba-pill">Before</span></div>
+          <div class="ba-item"><img src="images/case-crowding-after.jpg" alt="Teeth after clear aligner treatment for crowding and a deep bite" loading="lazy"><span class="ba-pill after">After</span></div>
+        </div>
+        <div class="ba-caption"><h3>Crowding &amp; deep bite</h3><p>Crowded teeth aligned and the bite opened for a healthier, easier-to-clean smile.</p></div>
+      </div>
+      <div class="ba-card ba-mouth">
+        <div class="ba-pair">
+          <div class="ba-item"><img src="images/case-deepbite-before.jpg" alt="Teeth before clear aligner treatment for a deep bite and displaced side tooth" loading="lazy"><span class="ba-pill">Before</span></div>
+          <div class="ba-item"><img src="images/case-deepbite-after.jpg" alt="Teeth after clear aligner treatment for a deep bite and displaced side tooth" loading="lazy"><span class="ba-pill after">After</span></div>
+        </div>
+        <div class="ba-caption"><h3>Deep bite &amp; tucked-in side tooth</h3><p>A displaced side tooth guided into position and the deep bite corrected.</p></div>
+      </div>
+    </div>
+    <p class="ba-note">Genuine Happy Teeth Springwood patients treated with clear aligners, shared with consent. Individual results vary — treatment outcomes depend on your individual circumstances and suitability.</p>
+  </div>
+</section>
+
+<!-- PROCEDURE DIAGRAMS -->
+<section>
   <div class="wrap">
     <span class="eyebrow">Explained simply</span>
     <h2>How clear aligner treatment works</h2>
     <p class="lead" style="margin-top:14px">Every smile is planned individually, but most aligner journeys follow the same four stages.</p>
     <div class="steps">
       <div class="step"><span class="step-num">1</span>
-        <svg viewBox="0 0 160 110" role="img" aria-label="Diagram: digital scan of the teeth">
+        <svg viewBox="0 0 160 110" role="img" aria-label="Diagram: free consultation and preliminary assessment">
           <rect x="10" y="10" width="140" height="90" rx="10" fill="#FAF6F1" stroke="#E5DED5"/>
-          <g fill="#fff" stroke="#12332B" stroke-width="2">
-            <rect x="34" y="46" width="18" height="24" rx="6"/>
-            <rect x="56" y="42" width="18" height="28" rx="6"/>
-            <rect x="78" y="40" width="18" height="30" rx="6"/>
-            <rect x="100" y="44" width="18" height="26" rx="6"/>
-          </g>
-          <line x1="20" y1="56" x2="140" y2="56" stroke="#DDA090" stroke-width="3" stroke-dasharray="6 5"/>
+          <path d="M40 78 Q60 40 80 40 Q100 40 120 78" fill="none" stroke="#286050" stroke-width="3" stroke-dasharray="5 4"/>
+          <circle cx="80" cy="58" r="22" fill="none" stroke="#DDA090" stroke-width="3.5"/>
+          <line x1="96" y1="74" x2="112" y2="90" stroke="#DDA090" stroke-width="4.5" stroke-linecap="round"/>
         </svg>
-        <h3>Digital scan</h3>
-        <p>At your free consultation we assess your teeth and bite, and map out your smile digitally — no messy impressions.</p>
+        <h3>Free consultation</h3>
+        <p>A relaxed chat with Dr Suzanna Lee about how aligners work — see them on a physical model, have preliminary photos taken, and get an estimate of your pricing. A full exam with x-rays and photos makes sure your mouth is ready for ortho treatment.</p>
       </div>
       <div class="step"><span class="step-num">2</span>
-        <svg viewBox="0 0 160 110" role="img" aria-label="Diagram: custom aligner trays made in a series">
+        <svg viewBox="0 0 160 110" role="img" aria-label="Diagram: digital scan, smile simulation and custom aligner series">
           <g fill="none" stroke="#286050" stroke-width="2.6">
             <path d="M30 44 q50 -26 100 0 v10 q-50 22 -100 0 z" opacity=".3"/>
             <path d="M30 58 q50 -26 100 0 v10 q-50 22 -100 0 z" opacity=".6"/>
             <path d="M30 72 q50 -26 100 0 v10 q-50 22 -100 0 z"/>
           </g>
+          <line x1="30" y1="30" x2="130" y2="30" stroke="#DDA090" stroke-width="3" stroke-dasharray="6 5"/>
         </svg>
-        <h3>Your aligner series</h3>
-        <p>A sequence of custom trays is made just for you — each one designed to move your teeth a small, precise step.</p>
+        <h3>Scan &amp; smile design</h3>
+        <p>Dr Mary Liu takes your digital scan and shows you a simulation of your projected result as part of a comprehensive consultation — then your custom aligner series is designed and made just for you.</p>
       </div>
       <div class="step"><span class="step-num">3</span>
         <svg viewBox="0 0 160 110" role="img" aria-label="Diagram: aligner worn over the teeth, moving them gradually">
@@ -338,22 +420,27 @@ footer a{color:var(--salmon);text-decoration:none}
 <!-- PAYMENT -->
 <section>
   <div class="wrap">
-    <span class="eyebrow">Made affordable</span>
-    <h2>Ways to fund your treatment</h2>
-    <p class="lead" style="margin-top:14px">Cost shouldn't stand between you and a smile you love. We'll walk you through every option at your free consultation — with a clear, written quote before anything begins.</p>
+    <div class="pay-intro">
+      <div>
+        <span class="eyebrow">Made affordable</span>
+        <h2>Ways to fund your treatment</h2>
+        <p class="lead" style="margin-top:14px">Cost shouldn't stand between you and a smile you love. We'll walk you through every option at your free consultation — with a clear, written quote before anything begins.</p>
+      </div>
+      <div class="pay-photo"><img src="images/reception.jpg" alt="The reception area at Happy Teeth Springwood" loading="lazy"><span class="ph-cap">Our welcoming Springwood reception</span></div>
+    </div>
     <div class="pay-grid">
       <div class="pay featured">
         <span class="tag">From $59 / week*</span>
         <h3>MediPay payment plans</h3>
-        <p style="color:var(--muted);font-size:.94rem;margin-top:8px">Spread the cost of your aligner treatment into manageable weekly repayments through MediPay, rather than paying it all at once. We'll help you apply and understand your repayments before you commit.</p>
+        <p style="color:var(--muted);font-size:.94rem;margin-top:8px">Spread the cost of your aligner treatment into manageable instalments through MediPay, rather than paying it all at once. Repayments are collected fortnightly (just under $120 per fortnight — the equivalent of about $59 per week), and we'll help you apply and understand your exact repayments before you commit.</p>
       </div>
       <div class="pay">
         <h3>Health funds &amp; rebates</h3>
         <p style="color:var(--muted);font-size:.94rem;margin-top:8px">We work with all major health funds and offer on-the-spot claiming. If your extras cover includes orthodontics, you may be able to claim a rebate towards your treatment.</p>
       </div>
       <div class="pay">
-        <h3>Transparent pricing</h3>
-        <p style="color:var(--muted);font-size:.94rem;margin-top:8px">Your quote covers your full aligner journey — reviews, refinements as planned, and your finishing retainer — so there are no surprises along the way.</p>
+        <h3>Clear, upfront information</h3>
+        <p style="color:var(--muted);font-size:.94rem;margin-top:8px">You'll receive clear written information and your quote before treatment begins — with a payment schedule if you're self-funding. Retainers are planned and quoted separately towards the end of treatment, once we know the type that will best protect your result.</p>
       </div>
     </div>
   </div>
@@ -368,7 +455,7 @@ footer a{color:var(--salmon);text-decoration:none}
     <div class="grid-3" style="margin-top:30px">
       <div class="card"><h3>Progress reviews</h3><p>Regular check-ins to make sure your teeth are tracking to plan, with adjustments or refinements arranged if needed.</p></div>
       <div class="card"><h3>Guidance that sticks</h3><p>Clear advice on wear time, cleaning your aligners and caring for your teeth, so treatment stays comfortable and on schedule.</p></div>
-      <div class="card"><h3>Retainers &amp; beyond</h3><p>A finishing retainer to protect your result, plus ongoing care from our team to keep your new smile healthy for years.</p></div>
+      <div class="card"><h3>Retainers &amp; beyond</h3><p>We'll plan the right finishing retainer to protect your result, plus ongoing care from our team to keep your new smile healthy for years.</p></div>
     </div>
   </div>
 </section>
@@ -384,31 +471,31 @@ footer a{color:var(--salmon);text-decoration:none}
         <div>
           <h3>Dr Suzanna Lee</h3>
           <div class="role">Principal Dentist &amp; Director</div>
-          <p>With over 20 years of experience, Dr Lee established Happy Teeth Springwood to deliver gentle, honest, personalised dentistry — the kind she'd want for her own family. She takes the time to listen, explain and tailor treatment to each person's individual needs and goals, so your aligner journey is planned around you.</p>
+          <p>With over 20 years of experience, Dr Lee established Happy Teeth Springwood to deliver gentle, honest, personalised dentistry — the kind she'd want for her own family. She'll guide you personally through your free consultation, taking the time to listen, explain and answer every question before your aligner journey begins.</p>
+        </div>
+      </div>
+      <div class="dentist">
+        <img src="https://www.happyteethspringwood.com.au/images/mary.png" alt="Dr Mary Liu">
+        <div>
+          <h3>Dr Mary Liu</h3>
+          <div class="role">Clear Aligner Dentist</div>
+          <p>With 20+ years of experience and a special interest in clear aligners and smile design, Dr Liu leads your digital scan, smile simulation and comprehensive consultation — and guides your smile through every stage of treatment.</p>
         </div>
       </div>
       <div class="dentist">
         <img src="https://www.happyteethspringwood.com.au/assets/AllanProfile-BgqUZGQo.png" alt="Dr Allan Nguyen">
         <div>
           <h3>Dr Allan Nguyen</h3>
-          <div class="role">Implant &amp; Surgical Dentist</div>
-          <p>With 10+ years of experience across comprehensive general dentistry, Dr Nguyen brings precision and careful treatment planning to every case he sees.</p>
+          <div class="role">All-On-X &amp; Implant Dentist</div>
+          <p>10+ years of experience across comprehensive general dentistry, with a focus on implants and full-mouth rehabilitation. Dr Nguyen brings precision and careful planning to every case.</p>
         </div>
       </div>
       <div class="dentist">
-        <img src="https://www.happyteethspringwood.com.au/assets/JohnProfile-CcZlfZYT.png" alt="Dr John Kim">
+        <img src="https://www.happyteethspringwood.com.au/images/jungin.webp" alt="Dr Jungin Park">
         <div>
-          <h3>Dr John Kim</h3>
-          <div class="role">Associate Dentist</div>
-          <p>Dr Kim has a special interest in aesthetic dentistry and always explains treatment options clearly, so you feel confident every step of the way. Fluent in English and Korean.</p>
-        </div>
-      </div>
-      <div class="dentist">
-        <img src="https://www.happyteethspringwood.com.au/assets/FerrolProfile-Iv7nwSWe.png" alt="Dr Ferrol Cheyne">
-        <div>
-          <h3>Dr Ferrol Cheyne</h3>
-          <div class="role">Associate Dentist</div>
-          <p>With 12+ years of experience, Dr Cheyne makes dentistry feel approachable and stress-free — especially for patients who feel anxious or unsure.</p>
+          <h3>Dr Jungin Park</h3>
+          <div class="role">Surgical &amp; Implant Dentist</div>
+          <p>With 20+ years of experience across private practice and the New Zealand Army, Dr Park has a special interest in oral surgery — bringing a calm, methodical approach to every procedure.</p>
         </div>
       </div>
     </div>
@@ -421,8 +508,8 @@ footer a{color:var(--salmon);text-decoration:none}
     <span class="eyebrow">Simple from here</span>
     <h2>Your journey in four steps</h2>
     <div class="steps">
-      <div class="step"><span class="step-num">1</span><h3>Free consultation</h3><p>We assess your teeth, bite and smile goals, and confirm whether clear aligners are right for you. No cost, no obligation.</p></div>
-      <div class="step"><span class="step-num">2</span><h3>Your smile plan</h3><p>You receive a clear written plan and quote, including MediPay weekly payment options — before you decide anything.</p></div>
+      <div class="step"><span class="step-num">1</span><h3>Free consultation</h3><p>A relaxed chat with Dr Suzanna Lee about the process, with preliminary photos, a pricing estimate and aligners shown on a model. No cost, no obligation.</p></div>
+      <div class="step"><span class="step-num">2</span><h3>Your smile plan</h3><p>Dr Mary Liu takes your digital scan and smile simulation as part of a comprehensive consultation — and you receive a clear written plan and quote, including MediPay payment options, before you decide anything.</p></div>
       <div class="step"><span class="step-num">3</span><h3>Your treatment</h3><p>Collect your aligner series and change trays as directed, with regular reviews at our Springwood practice.</p></div>
       <div class="step"><span class="step-num">4</span><h3>Retain &amp; smile</h3><p>A finishing retainer protects your result, and our team supports you long after treatment ends.</p></div>
     </div>
@@ -435,7 +522,7 @@ footer a{color:var(--salmon);text-decoration:none}
     <span class="eyebrow">Good to know</span>
     <h2 style="margin-bottom:28px">Common questions</h2>
     <details><summary>Am I suitable for clear aligners?</summary><div class="a">Aligners can treat a wide range of concerns — crowding, gaps and many bite issues — for teens and adults alike. Some complex cases may need a different approach, and the only way to know for certain is a consultation, where your suitability is assessed in person. Your first consultation with us is free.</div></details>
-    <details><summary>How do the "from $59 per week" payments work?</summary><div class="a">Weekly figures are based on treatment financed through a MediPay payment plan, subject to MediPay's terms, approval and eligibility criteria. Your exact repayment depends on your treatment plan, deposit and term — we'll give you the actual numbers in writing at your consultation before you decide anything.</div></details>
+    <details><summary>How do the "from $59 per week" payments work?</summary><div class="a">Weekly figures are the equivalent weekly cost of treatment financed through a MediPay payment plan — repayments are collected fortnightly (just under $120 per fortnight) — and are subject to MediPay's terms, approval and eligibility criteria. Your exact repayment depends on your treatment plan, deposit and term, and we'll give you the actual numbers in writing before you decide anything.</div></details>
     <details><summary>How long does aligner treatment take?</summary><div class="a">It depends on how far your teeth need to move. Minor corrections can take a few months, while more involved cases take longer. Your personalised plan will show your expected timeline — and you'll often see your projected result digitally before you begin.</div></details>
     <details><summary>Do aligners hurt?</summary><div class="a">You may feel gentle pressure for a day or two when you change to a new tray — that's a sign your teeth are moving. Most people find aligners far more comfortable than braces, with no brackets or wires to irritate your cheeks and lips.</div></details>
     <details><summary>Can I eat and drink normally?</summary><div class="a">Yes — that's one of the biggest advantages. You simply remove your aligners to eat and drink (anything other than water), brush, and pop them back in. No food restrictions like braces.</div></details>
@@ -455,6 +542,26 @@ footer a{color:var(--salmon);text-decoration:none}
   </div>
 </section>
 
+
+<!-- VISIT US -->
+<section class="visit">
+  <div class="wrap">
+    <span class="eyebrow">Find us</span>
+    <h2>Visit us at Springwood Mall</h2>
+    <div class="visit-grid">
+      <div class="visit-details">
+        <div class="visit-item"><h3>Address</h3><p>Springwood Mall, Corner of Rochedale Road &amp; Fitzgerald Avenue, Springwood QLD 4127 — between Target and Woolworths.</p></div>
+        <div class="visit-item"><h3>Phone</h3><p><a href="tel:0731139688">(07) 3113 9688</a></p></div>
+        <div class="visit-item"><h3>Hours</h3><p>Monday–Friday: 8:30am – 5:00pm<br>Earlier &amp; later appointments (7:30am–7pm) available on request.</p></div>
+        <div class="visit-item"><h3>Parking</h3><p>Ample free parking at Springwood Mall, with easy access from the M1 (exit 20).</p></div>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5222.489679771439!2d153.12453540468783!3d-27.613543334641403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sau!4v1753502089151!5m2!1sen!2sau" title="Map — Happy Teeth Springwood at Springwood Mall" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div class="foot-grid">
@@ -469,7 +576,7 @@ footer a{color:var(--salmon);text-decoration:none}
       </div>
     </div>
     <div class="legal">
-      <p>*Weekly pricing is indicative only and based on treatment financed via a MediPay payment plan; subject to MediPay's terms, eligibility criteria and approval. Actual repayments depend on your individual treatment plan, deposit and term, confirmed in writing before treatment.</p>
+      <p>*Weekly pricing is indicative only, shown as the equivalent weekly cost of treatment financed via a MediPay payment plan (repayments are collected fortnightly); subject to MediPay's terms, eligibility criteria and approval. Actual repayments depend on your individual treatment plan, deposit and term, confirmed in writing before treatment.</p>
       <p>Clear aligner treatment requires a consultation to determine suitability, and individual results and treatment times vary. Any dental procedure carries risks; before proceeding, you should seek a second opinion from an appropriately qualified health practitioner if you wish.</p>
       <p>© Happy Teeth Springwood. All rights reserved · Website by <a href="https://generateyouraudience.com">Generate Your Audience</a></p>
     </div>

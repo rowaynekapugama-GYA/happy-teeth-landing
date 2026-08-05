@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="noindex, follow">
-<title>Dental Implants from $42 per week | Happy Teeth Springwood</title>
-<meta name="description" content="Dental implants and All-on-X in Springwood QLD from $42 per week. MediPay payment plans, access-your-super options and a free consultation at Happy Teeth Springwood.">
+<title>Dental Implants from $39 per week | Happy Teeth Springwood</title>
+<meta name="description" content="Dental implants and All-on-X in Springwood QLD from $39 per week. MediPay payment plans, access-your-super options and a free consultation at Happy Teeth Springwood.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420;0,9..144,560;0,9..144,640;1,9..144,480&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -157,6 +157,28 @@ footer h3{color:#fff;font-size:1rem;margin-bottom:10px}
 .legal{border-top:1px solid rgba(255,255,255,.14);padding-top:24px}
 .legal p{color:#7E988D;font-size:.76rem;margin-bottom:10px;line-height:1.7}
 footer a{color:var(--salmon);text-decoration:none}
+/* visit us — dark shopfront banner with map */
+.visit{position:relative;overflow:hidden;background:var(--green-ink);color:#fff}
+.visit::before{content:"";position:absolute;inset:0;background:url('images/shopfront.jpg') center/cover;opacity:.8}
+.visit::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(18,51,43,.96) 0%,rgba(18,51,43,.88) 45%,rgba(18,51,43,.62) 100%)}
+.visit .wrap{position:relative;z-index:2}
+.visit .eyebrow{color:var(--salmon)}
+.visit h2{color:#fff}
+.visit-grid{display:grid;gap:28px;margin-top:30px;align-items:stretch}
+@media(min-width:900px){.visit-grid{grid-template-columns:.9fr 1.1fr}}
+.visit-details{display:grid;gap:16px;align-content:start}
+.visit-item{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px);border-radius:16px;padding:16px 18px}
+.visit-item h3{color:#fff;font-size:.98rem;margin-bottom:4px}
+.visit-item p{color:#CFE0D8;font-size:.9rem}
+.visit-item a{color:var(--salmon);text-decoration:none;font-weight:700}
+.map-frame{border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.2);box-shadow:0 24px 60px rgba(0,0,0,.45);min-height:340px}
+.map-frame iframe{width:100%;height:100%;min-height:340px;border:0;display:block;filter:saturate(.9)}
+/* payment intro photo */
+.pay-intro{display:grid;gap:26px;align-items:center}
+@media(min-width:900px){.pay-intro{grid-template-columns:1.15fr .85fr}}
+.pay-photo{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);position:relative}
+.pay-photo img{width:100%;display:block;aspect-ratio:4/3.4;object-fit:cover}
+.pay-photo .ph-cap{position:absolute;left:12px;bottom:12px;background:rgba(18,51,43,.82);backdrop-filter:blur(6px);color:#fff;font-size:.78rem;font-weight:600;padding:8px 13px;border-radius:12px}
 /* sticky mobile bar */
 .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
 .sticky-cta .btn{flex:1;padding:13px 10px;font-size:.92rem}
@@ -182,10 +204,10 @@ footer a{color:var(--salmon);text-decoration:none}
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow">Springwood QLD &middot; Free Consultation</span>
-      <h1>Dental Implants from <span class="hl">$42 per week</span><em style="font-style:italic;font-weight:480">*</em></h1>
+      <h1>Dental Implants from <span class="hl">$39 per week</span><em style="font-style:italic;font-weight:480">*</em></h1>
       <p class="sub">Replace missing or failing teeth with fixed, natural-looking implants — from a single tooth to a full All-on-X arch — with ongoing aftercare support from our Springwood team.</p>
       <ul class="trust">
-        <li><span class="tick">✓</span> Dedicated implant &amp; surgical dentist</li>
+        <li><span class="tick">✓</span> Dedicated implant &amp; surgical dentists</li>
         <li><span class="tick">✓</span> Free, no-obligation consultation</li>
         <li><span class="tick">✓</span> Aftercare support included</li>
       </ul>
@@ -248,7 +270,7 @@ footer a{color:var(--salmon);text-decoration:none}
   <div class="wrap">
     <span class="eyebrow">A solution that lasts</span>
     <h2>Missing teeth change more than your smile</h2>
-    <p class="lead" style="margin:14px 0 30px">Eating, speaking and smiling all become harder when teeth are missing or failing — and that takes a toll on confidence. Unlike a removable denture, an implant replaces the root of the tooth, bonding with your jawbone to create a stable foundation for a fixed, natural-looking replacement.</p>
+    <p class="lead" style="margin:14px 0 30px">Eating, speaking and smiling all become harder when teeth are missing or failing — and the effects go deeper than confidence. Without a tooth root, the jawbone beneath begins to shrink away, and your remaining teeth take on extra load, drifting and wearing unevenly as your bite falls out of balance. Because an implant replaces the root itself, it helps preserve the bone, protects your other teeth from that added stress, and creates a stable foundation for a fixed, natural-looking replacement.</p>
     <div class="grid-2">
       <div class="card">
         <h3>Dental implants</h3>
@@ -287,8 +309,8 @@ footer a{color:var(--salmon);text-decoration:none}
           <circle cx="80" cy="58" r="22" fill="none" stroke="#DDA090" stroke-width="3.5"/>
           <line x1="96" y1="74" x2="112" y2="90" stroke="#DDA090" stroke-width="4.5" stroke-linecap="round"/>
         </svg>
-        <h3>Scan &amp; plan</h3>
-        <p>Your free consultation includes an assessment of your teeth, gums and jawbone, so your plan is built around you.</p>
+        <h3>Consult &amp; records</h3>
+        <p>Start with a free consultation to talk through your options and see an implant on a model. From there, a comprehensive exam with x-rays, photos and a 3D CBCT scan maps your jaw precisely.</p>
       </div>
       <div class="step"><span class="step-num">2</span>
         <svg viewBox="0 0 160 110" role="img" aria-label="Diagram: titanium implant placed in the jawbone">
@@ -342,14 +364,19 @@ footer a{color:var(--salmon);text-decoration:none}
 <!-- PAYMENT -->
 <section>
   <div class="wrap">
-    <span class="eyebrow">Made affordable</span>
-    <h2>Ways to fund your treatment</h2>
-    <p class="lead" style="margin-top:14px">Cost shouldn't stand between you and your smile. We'll walk you through every option at your free consultation — and give you a clear, written plan before anything begins.</p>
+    <div class="pay-intro">
+      <div>
+        <span class="eyebrow">Made affordable</span>
+        <h2>Ways to fund your treatment</h2>
+        <p class="lead" style="margin-top:14px">Cost shouldn't stand between you and your smile. We'll walk you through every option at your free consultation — and give you a clear, written plan before anything begins.</p>
+      </div>
+      <div class="pay-photo"><img src="images/reception.jpg" alt="The reception area at Happy Teeth Springwood" loading="lazy"><span class="ph-cap">Our welcoming Springwood reception</span></div>
+    </div>
     <div class="pay-grid">
       <div class="pay featured">
-        <span class="tag">From $42 / week*</span>
+        <span class="tag">From $39 / week*</span>
         <h3>MediPay payment plans</h3>
-        <p style="color:var(--muted);font-size:.94rem;margin-top:8px">Spread the cost of your treatment into manageable weekly repayments through MediPay, rather than paying it all at once. We'll help you apply and understand your repayments before you commit.</p>
+        <p style="color:var(--muted);font-size:.94rem;margin-top:8px">Spread the cost of your treatment into manageable instalments through MediPay, rather than paying it all at once. Repayments are collected fortnightly — the equivalent of as little as $39 per week — and we'll help you apply and understand your exact repayments before you commit.</p>
       </div>
       <div class="pay">
         <img class="logo-super" src="data:image/png;base64,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" alt="Access your super for dental treatment">
@@ -389,31 +416,31 @@ footer a{color:var(--salmon);text-decoration:none}
         <div>
           <h3>Dr Suzanna Lee</h3>
           <div class="role">Principal Dentist &amp; Director</div>
-          <p>With over 20 years of experience, Dr Lee established Happy Teeth Springwood to deliver gentle, honest, personalised dentistry — the kind she'd want for her own family. She takes the time to listen, explain and tailor treatment to each person's individual needs and goals, so your implant journey is planned around you from the very first visit.</p>
+          <p>With over 20 years of experience, Dr Lee established Happy Teeth Springwood to deliver gentle, honest, personalised dentistry — the kind she'd want for her own family. She'll guide you personally through your free consultation, taking the time to listen, explain and tailor your treatment pathway from the very first visit.</p>
         </div>
       </div>
       <div class="dentist">
         <img src="https://www.happyteethspringwood.com.au/assets/AllanProfile-BgqUZGQo.png" alt="Dr Allan Nguyen">
         <div>
           <h3>Dr Allan Nguyen</h3>
-          <div class="role">Implant &amp; Surgical Dentist</div>
+          <div class="role">All-On-X &amp; Implant Dentist</div>
           <p>10+ years of experience with a focus on dental implants and full-mouth rehabilitation. Dr Nguyen regularly undertakes advanced implant training and brings precision and clear communication to every case.</p>
         </div>
       </div>
       <div class="dentist">
-        <img src="https://www.happyteethspringwood.com.au/assets/JohnProfile-CcZlfZYT.png" alt="Dr John Kim">
+        <img src="https://www.happyteethspringwood.com.au/images/jungin.webp" alt="Dr Jungin Park">
         <div>
-          <h3>Dr John Kim</h3>
-          <div class="role">Associate Dentist</div>
-          <p>Dr Kim has a special interest in dental implants, restorative and aesthetic dentistry, and takes the time to explain every option clearly. Fluent in English and Korean.</p>
+          <h3>Dr Jungin Park</h3>
+          <div class="role">Surgical &amp; Implant Dentist</div>
+          <p>With 20+ years of experience across private practice and the New Zealand Army, Dr Park has a special interest in oral surgery and complex extractions — bringing a calm, methodical approach to every procedure.</p>
         </div>
       </div>
       <div class="dentist">
-        <img src="https://www.happyteethspringwood.com.au/assets/FerrolProfile-Iv7nwSWe.png" alt="Dr Ferrol Cheyne">
+        <img src="https://www.happyteethspringwood.com.au/images/mary.png" alt="Dr Mary Liu">
         <div>
-          <h3>Dr Ferrol Cheyne</h3>
-          <div class="role">Associate Dentist</div>
-          <p>With 12+ years of experience including oral surgery and urgent care, Dr Cheyne makes dentistry feel approachable and stress-free — especially for anxious patients.</p>
+          <h3>Dr Mary Liu</h3>
+          <div class="role">Clear Aligner Dentist</div>
+          <p>With 20+ years of experience and a special interest in clear aligners and smile design, Dr Liu helps ensure your finished smile looks as good as it functions.</p>
         </div>
       </div>
     </div>
@@ -426,10 +453,10 @@ footer a{color:var(--salmon);text-decoration:none}
     <span class="eyebrow">Simple from here</span>
     <h2>Your journey in four steps</h2>
     <div class="steps">
-      <div class="step"><span class="step-num">1</span><h3>Free consultation</h3><p>We examine your teeth, gums, bone and smile, and listen to what you want to achieve. No cost, no obligation.</p></div>
-      <div class="step"><span class="step-num">2</span><h3>Your treatment plan</h3><p>You receive a clear written plan and a breakdown of your options — including MediPay and super-access funding.</p></div>
-      <div class="step"><span class="step-num">3</span><h3>Your treatment</h3><p>Treatment is carried out in our modern Springwood practice, with your comfort as the priority at every visit.</p></div>
-      <div class="step"><span class="step-num">4</span><h3>Aftercare</h3><p>We support you through healing and beyond, so you can enjoy your new smile with total confidence.</p></div>
+      <div class="step"><span class="step-num">1</span><h3>Free consultation</h3><p>A relaxed chat with Dr Suzanna Lee about your options — see exactly what an implant looks like on a model and ask anything. No cost, no obligation.</p></div>
+      <div class="step"><span class="step-num">2</span><h3>Records &amp; 3D imaging</h3><p>A comprehensive exam with x-rays and photos (around 40 minutes), plus a CBCT 3D scan at a nearby imaging clinic. Any general dental needs are planned first.</p></div>
+      <div class="step"><span class="step-num">3</span><h3>Your treatment plan</h3><p>Our implant dentists review your CBCT and prepare your personalised plan and quote. You return for a second free consultation to walk through it — including MediPay and super options.</p></div>
+      <div class="step"><span class="step-num">4</span><h3>Placement &amp; aftercare</h3><p>Once you're happy to proceed, your implant placement is scheduled with our implant team — with aftercare support through healing and beyond.</p></div>
     </div>
   </div>
 </section>
@@ -440,7 +467,7 @@ footer a{color:var(--salmon);text-decoration:none}
     <span class="eyebrow">Good to know</span>
     <h2 style="margin-bottom:28px">Common questions</h2>
     <details><summary>Am I a suitable candidate for dental implants?</summary><div class="a">Many people with missing or damaged teeth are suitable — including those finding dentures uncomfortable, or who have been told implants may be difficult due to reduced bone (where All-on-X may help). The only way to know for certain is a consultation, where your suitability is assessed in person. Your first consultation with us is free.</div></details>
-    <details><summary>How do the "from $42 per week" payments work?</summary><div class="a">Weekly figures are based on treatment financed through a MediPay payment plan, subject to MediPay's terms, approval and eligibility criteria. Your exact repayment depends on your treatment plan, deposit and term — we'll give you the actual numbers in writing at your consultation before you decide anything.</div></details>
+    <details><summary>How do the "from $39 per week" payments work?</summary><div class="a">Weekly figures are the equivalent weekly cost of treatment financed through a MediPay payment plan — repayments are collected fortnightly — and are subject to MediPay's terms, approval and eligibility criteria. Your exact repayment depends on your treatment plan, deposit and term, and we'll give you the actual numbers in writing before you decide anything.</div></details>
     <details><summary>Can I really use my super to pay for treatment?</summary><div class="a">Eligible patients may be able to access their superannuation early on compassionate grounds to fund medically necessary dental treatment. Eligibility is decided by the ATO, not by the practice, and we recommend seeking independent financial advice. We're happy to guide you through how the application generally works and provide the clinical documentation required.</div></details>
     <details><summary>Will treatment be painful?</summary><div class="a">Your comfort is our priority. Treatment is performed with effective local anaesthetic, and we'll discuss comfort options with you so the experience is as relaxed as possible. Most patients are surprised by how manageable implant treatment is, and we support you closely through the healing period.</div></details>
     <details><summary>What's the difference between implants and All-on-X?</summary><div class="a">A standard implant replaces an individual tooth root and supports a single crown or small bridge. All-on-X replaces an entire upper or lower arch using a small number of strategically placed implants supporting one fixed bridge — often a more efficient option when many teeth are missing or failing.</div></details>
@@ -460,6 +487,26 @@ footer a{color:var(--salmon);text-decoration:none}
   </div>
 </section>
 
+
+<!-- VISIT US -->
+<section class="visit">
+  <div class="wrap">
+    <span class="eyebrow">Find us</span>
+    <h2>Visit us at Springwood Mall</h2>
+    <div class="visit-grid">
+      <div class="visit-details">
+        <div class="visit-item"><h3>Address</h3><p>Springwood Mall, Corner of Rochedale Road &amp; Fitzgerald Avenue, Springwood QLD 4127 — between Target and Woolworths.</p></div>
+        <div class="visit-item"><h3>Phone</h3><p><a href="tel:0731139688">(07) 3113 9688</a></p></div>
+        <div class="visit-item"><h3>Hours</h3><p>Monday–Friday: 8:30am – 5:00pm<br>Earlier &amp; later appointments (7:30am–7pm) available on request.</p></div>
+        <div class="visit-item"><h3>Parking</h3><p>Ample free parking at Springwood Mall, with easy access from the M1 (exit 20).</p></div>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5222.489679771439!2d153.12453540468783!3d-27.613543334641403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sau!4v1753502089151!5m2!1sen!2sau" title="Map — Happy Teeth Springwood at Springwood Mall" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div class="foot-grid">
@@ -474,7 +521,7 @@ footer a{color:var(--salmon);text-decoration:none}
       </div>
     </div>
     <div class="legal">
-      <p>*Weekly pricing is indicative only and based on treatment financed via a MediPay payment plan; subject to MediPay's terms, eligibility criteria and approval. Actual repayments depend on your individual treatment plan, deposit and term, confirmed in writing before treatment.</p>
+      <p>*Weekly pricing is indicative only, shown as the equivalent weekly cost of treatment financed via a MediPay payment plan (repayments are collected fortnightly); subject to MediPay's terms, eligibility criteria and approval. Actual repayments depend on your individual treatment plan, deposit and term, confirmed in writing before treatment.</p>
       <p>Any surgical or invasive procedure carries risks. Before proceeding, you should seek a second opinion from an appropriately qualified health practitioner. Dental implant treatment requires a consultation to determine suitability, and individual results vary.</p>
       <p>Early release of superannuation is subject to eligibility criteria set by the ATO and is not guaranteed; we recommend seeking independent financial advice.</p>
       <p>© Happy Teeth Springwood. All rights reserved · Website by <a href="https://generateyouraudience.com">Generate Your Audience</a></p>
