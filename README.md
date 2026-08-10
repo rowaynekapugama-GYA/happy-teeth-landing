@@ -1,3 +1,45 @@
+# Happy Teeth Springwood — Meta Lead Generation
+
+Landing pages and ad creatives for the Happy Teeth Springwood Meta lead
+generation campaigns. Built by Generate Your Audience.
+
+## Quick start
+
+```bash
+git clone <this-repo>
+cd happy-teeth-landing-pages
+npx vercel            # preview deploy
+npx vercel --prod     # production deploy
+```
+
+Then in **Vercel > Project > Settings > Environment Variables**, add:
+
+| Variable | Value |
+|---|---|
+| `SMTP2GO_API_KEY` | SMTP2GO API key |
+| `LEAD_FROM_EMAIL` | Verified sender, e.g. no-reply@happyteethspringwood.com.au |
+
+Redeploy after adding them, then submit a test enquiry on each page and
+confirm the lead lands in the matching SmileOx pipeline.
+
+> **Never commit the API key.** `.env` is git-ignored; use `.env.example`
+> as the template.
+
+## Repo layout
+
+```
+index.html              Chooser page for the site root
+dental-implants.html    Implants / All-on-X landing page
+clear-aligners.html     Clear aligners landing page
+api/lead.js             Serverless relay: form -> SmileOx intake
+images/                 All page photography and diagrams
+vercel.json             noindex headers on every route
+marketing/meta-ads/     12 ad creatives + approval sheet (not deployed)
+marketing/ad-scripts/   Python generators for the creatives
+```
+
+---
+
 # Happy Teeth Springwood — Meta Lead Generation Package
 
 Prepared by Generate Your Audience.
@@ -21,9 +63,30 @@ Prepared by Generate Your Audience.
 
 | Variable | Value |
 |---|---|
-| `SMTP2GO_API_KEY` | SMTP2GO API key (pending — from client's domain verification) |
-| `LEAD_TO_EMAIL` | SmileOx intake address for Happy Teeth |
-| `LEAD_FROM_EMAIL` | Verified sender, e.g. leads@happyteethspringwood.com.au |
+| `SMTP2GO_API_KEY` | SMTP2GO API key |
+| `LEAD_FROM_EMAIL` | Verified sender on the SMTP2GO account, e.g. no-reply@happyteethspringwood.com.au |
+
+Optional, only if SmileOx reissues an intake address: `INTAKE_IMPLANTS`,
+`INTAKE_ALIGNERS`.
+
+**SmileOx intake addresses** (already hardcoded in `api/lead.js`):
+
+| Form | Intake |
+|---|---|
+| Dental Implants | dental-implants+51c38aac-...@intake.smileox.com.au |
+| Clear Aligners | ortho+8ca047a5-...@intake.smileox.com.au |
+
+Each submission is sent to the matching intake as an email whose plain-text
+body is the JSON payload SmileOx expects: `firstName`, `lastName`, `email`,
+`phoneNumber`, plus `source`, `page`, `submittedAt` and the qualifier answers
+(`teethToReplace` / `smileConcern` / `timeframe`). Phone numbers are
+normalised to E.164 (+61) so SmileOx matches leads reliably and the SMS
+automations can dial them. Transient send failures are retried three times,
+and any failed payload is written to the Vercel function logs so a lead can
+be recovered manually.
+
+**Enable Require TLS** on the sending domain in SMTP2GO (Settings → Sender
+Domains). SmileOx may reject messages delivered without TLS.
 
 **Still to add before launch:** Meta Pixel and GTM container in the `<head>`
 of both pages. The forms already fire `fbq('track','Lead')` and
