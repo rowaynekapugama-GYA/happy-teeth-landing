@@ -21,7 +21,7 @@
 html{scroll-behavior:smooth}
 html,body{overflow-x:hidden;max-width:100%}
 body{font-family:'Inter',system-ui,sans-serif;color:var(--green-ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 h1,h2,h3{font-family:'Fraunces',serif;line-height:1.1;font-weight:560;letter-spacing:-.01em;color:var(--green)}
 h1{font-size:clamp(2rem,5.6vw,3.4rem)}
 h2{font-size:clamp(1.6rem,4.6vw,2.5rem)}
@@ -229,6 +229,8 @@ footer a{color:var(--salmon);text-decoration:none}
   .logo-chip{padding:5px 11px}
   .topbar .btn{white-space:nowrap;font-size:.82rem;padding:10px 15px}
   .chip-note,.visit-item,.hero-badge{backdrop-filter:none}
+  .pay-photo img{aspect-ratio:16/10}
+  .pay-photo .ph-cap{font-size:.72rem;padding:6px 11px}
   .topbar,.sticky-cta{backdrop-filter:none;background:rgba(255,255,255,.97)}
 }
 /* sticky mobile bar */
@@ -650,7 +652,8 @@ form.addEventListener('submit',async e=>{
   };
   try{
     const res=await fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
-    if(!res.ok)throw new Error('send failed');
+    let info={};try{info=await res.clone().json()}catch(e){}
+    if(!res.ok){console.error('Lead submit failed',res.status,info);throw new Error(info.reason||info.error||('HTTP '+res.status));}
     form.style.display='none';
     document.getElementById('formSuccess').style.display='block';
     if(window.fbq)fbq('track','Lead');

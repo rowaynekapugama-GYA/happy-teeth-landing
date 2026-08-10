@@ -50,9 +50,30 @@ async function sendViaSmtp2go(body) {
 }
 
 export default async function handler(req, res) {
+  // GET /api/lead — config health check. Never returns the key itself.
+  if (req.method === 'GET') {
+    return res.status(200).json({
+      ok: true,
+      runtime: 'reachable',
+      hasApiKey: Boolean(process.env.SMTP2GO_API_KEY),
+      hasFromEmail: Boolean(process.env.LEAD_FROM_EMAIL),
+      fromEmail: process.env.LEAD_FROM_EMAIL || null,
+      intakes: Object.keys(INTAKES),
+    });
+  }
+
   if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST');
+    res.setHeader('Allow', 'POST, GET');
     return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  // Fail loudly and clearly if the environment isn't configured yet.
+  if (!process.env.SMTP2GO_API_KEY || !process.env.LEAD_FROM_EMAIL) {
+    console.error('Missing env vars', {
+      hasApiKey: Boolean(process.env.SMTP2GO_API_KEY),
+      hasFromEmail: Boolean(process.env.LEAD_FROM_EMAIL),
+    });
+    return res.status(500).json({ error: 'Not configured', reason: 'missing_env' });
   }
 
   const {
@@ -117,6 +138,10 @@ export default async function handler(req, res) {
 
   // Log the payload so nothing is lost if delivery fails — the lead can be
   // recovered from the Vercel function logs and entered manually.
+  const providerError =
+    (lastDetail && lastDetail.data && (lastDetail.data.error || lastDetail.data.error_code)) ||
+    (typeof lastDetail === 'string' ? lastDetail : null);
+
   console.error('SmileOx relay failed', { to, detail: lastDetail, payload });
-  return res.status(502).json({ error: 'Relay failed' });
+  return res.status(502).json({ error: 'Relay failed', reason: providerError || 'unknown' });
 }
