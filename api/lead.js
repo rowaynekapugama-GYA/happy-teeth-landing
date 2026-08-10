@@ -90,6 +90,11 @@ export default async function handler(req, res) {
       hasApiKey: Boolean(process.env.SMTP2GO_API_KEY),
       hasFromEmail: Boolean(process.env.LEAD_FROM_EMAIL),
       fromEmail: process.env.LEAD_FROM_EMAIL || null,
+      // Length and prefix only — never the key itself. An empty value reports 0,
+      // which distinguishes "not saved" from "saved but wrong".
+      apiKeyLength: (process.env.SMTP2GO_API_KEY || '').length,
+      apiKeyPrefix: (process.env.SMTP2GO_API_KEY || '').slice(0, 4) || null,
+      apiKeyHasWhitespace: /^\s|\s$/.test(process.env.SMTP2GO_API_KEY || ''),
       intakes: Object.keys(INTAKES),
     });
   }
