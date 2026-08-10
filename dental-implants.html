@@ -6,6 +6,23 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Dental Implants from $39 per week | Happy Teeth Springwood</title>
 <meta name="description" content="Dental implants and All-on-X in Springwood QLD from $39 per week. MediPay payment plans, access-your-super options and a free consultation at Happy Teeth Springwood.">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1055936410705829');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1055936410705829&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420;0,9..144,560;0,9..144,640;1,9..144,480&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -81,6 +98,8 @@ section{padding:64px 0}
 .chips input:checked+label{background:var(--green);border-color:var(--green);color:#fff}
 .chips input:focus-visible+label{outline:2px solid var(--salmon-deep);outline-offset:2px}
 .fields{display:grid;gap:12px;margin-top:16px}
+.name-row{display:grid;gap:12px}
+@media(min-width:400px){.name-row{grid-template-columns:1fr 1fr}}
 .field label{display:block;font-size:.8rem;font-weight:800;margin-bottom:5px;color:var(--green-deep)}
 .field input{width:100%;border:2px solid var(--line);border-radius:14px;padding:13px 14px;font:inherit;font-size:1rem;background:var(--cream)}
 .field input:focus{outline:none;border-color:var(--green);background:#fff}
@@ -275,7 +294,10 @@ footer a{color:var(--salmon);text-decoration:none}
           <input type="radio" name="timeframe" id="w3" value="Just researching" checked><label for="w3">Just researching</label>
         </div>
         <div class="fields">
-          <div class="field"><label for="name">Full name</label><input id="name" name="name" type="text" autocomplete="name" required placeholder="Your name"></div>
+          <div class="name-row">
+            <div class="field"><label for="firstName">First name</label><input id="firstName" name="firstName" type="text" autocomplete="given-name" required placeholder="First name"></div>
+            <div class="field"><label for="lastName">Last name</label><input id="lastName" name="lastName" type="text" autocomplete="family-name" required placeholder="Last name"></div>
+          </div>
           <div class="field"><label for="phone">Mobile number</label><input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="04xx xxx xxx"></div>
           <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@email.com"></div>
         </div>
@@ -587,7 +609,8 @@ form.addEventListener('submit',async e=>{
     page:'Happy Teeth — Dental Implants / All-on-X',
     teeth:(form.querySelector('input[name=teeth]:checked')||{}).value||'',
     timeframe:(form.querySelector('input[name=timeframe]:checked')||{}).value||'',
-    name:form.name.value.trim(),
+    firstName:form.firstName.value.trim(),
+    lastName:form.lastName.value.trim(),
     phone:form.phone.value.trim(),
     email:form.email.value.trim(),
     submittedAt:new Date().toISOString()
@@ -598,7 +621,7 @@ form.addEventListener('submit',async e=>{
     if(!res.ok){console.error('Lead submit failed',res.status,info);throw new Error(info.reason||info.error||('HTTP '+res.status));}
     form.style.display='none';
     document.getElementById('formSuccess').style.display='block';
-    if(window.fbq)fbq('track','Lead');
+    if(window.fbq)fbq('track','Lead',{content_name:'Dental Implants',content_category:'Free Consultation'});
     if(window.gtag)gtag('event','generate_lead');
   }catch(err){
     btn.disabled=false;btn.textContent='Claim my free consultation';

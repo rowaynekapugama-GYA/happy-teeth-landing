@@ -77,11 +77,19 @@ export default async function handler(req, res) {
   }
 
   const {
-    formKey, page, name, email, phone,
+    formKey, page, name, firstName: firstIn, lastName: lastIn, email, phone,
     teeth, concern, timeframe, submittedAt,
   } = req.body || {};
 
-  if (!name || !phone || !email) {
+  // Forms post firstName / lastName. `name` is still accepted so an older
+  // cached page keeps working after a deploy.
+  const first = String(firstIn || '').trim();
+  const last = String(lastIn || '').trim();
+  const { firstName, lastName } = first || last
+    ? { firstName: first, lastName: last }
+    : splitName(name);
+
+  if (!firstName || !phone || !email) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
 
@@ -90,8 +98,6 @@ export default async function handler(req, res) {
     console.error('Unknown formKey:', formKey);
     return res.status(400).json({ error: 'Unknown form' });
   }
-
-  const { firstName, lastName } = splitName(name);
 
   // SmileOx schema: firstName / lastName / email / phoneNumber, plus any
   // extra fields, which are stored against the lead.
