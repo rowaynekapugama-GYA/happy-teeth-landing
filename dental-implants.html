@@ -625,7 +625,9 @@ form.addEventListener('submit',async e=>{
     if(window.gtag)gtag('event','generate_lead');
   }catch(err){
     btn.disabled=false;btn.textContent='Claim my free consultation';
-    alert('Something went wrong sending your request. Please check your details and try again.');
+    const dbg=new URLSearchParams(location.search).has('debug');
+    alert('Something went wrong sending your request. Please check your details and try again.'
+      + (dbg ? '\n\n[debug] '+(err&&err.message?err.message:'unknown') : ''));
   }
 });
 </script>

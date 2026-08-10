@@ -50,6 +50,38 @@ async function sendViaSmtp2go(body) {
 }
 
 export default async function handler(req, res) {
+  // GET /api/lead?selftest=1 — performs a REAL send through SMTP2GO addressed to the
+  // sending address itself (so no junk lead is created in SmileOx) and returns the
+  // provider's exact response. This is what tells us why delivery is failing.
+  if (req.method === 'GET' && req.query && req.query.selftest) {
+    if (!process.env.SMTP2GO_API_KEY || !process.env.LEAD_FROM_EMAIL) {
+      return res.status(200).json({ selftest: 'skipped', reason: 'missing_env',
+        hasApiKey: Boolean(process.env.SMTP2GO_API_KEY),
+        hasFromEmail: Boolean(process.env.LEAD_FROM_EMAIL) });
+    }
+    try {
+      const r = await sendViaSmtp2go({
+        api_key: process.env.SMTP2GO_API_KEY,
+        to: [process.env.LEAD_FROM_EMAIL],
+        sender: process.env.LEAD_FROM_EMAIL,
+        subject: 'Happy Teeth relay self test',
+        text_body: JSON.stringify({ selftest: true, at: new Date().toISOString() }),
+      });
+      const data = await r.json().catch(() => ({}));
+      return res.status(200).json({
+        selftest: 'ran',
+        httpStatus: r.status,
+        succeeded: data && data.data ? data.data.succeeded : null,
+        failed: data && data.data ? data.data.failed : null,
+        providerError: data && data.data ? (data.data.error || data.data.error_code || null) : null,
+        failures: data && data.data ? data.data.failures : null,
+        raw: data,
+      });
+    } catch (err) {
+      return res.status(200).json({ selftest: 'threw', error: String(err) });
+    }
+  }
+
   // GET /api/lead — config health check. Never returns the key itself.
   if (req.method === 'GET') {
     return res.status(200).json({
